@@ -42,7 +42,6 @@ The app is built with **Gradio Blocks** and runs locally in your browser.
 
 **Output**
 - Live-rendered result image
-- Smart label summary
 - Downloadable transparent PNG
 
 ---
