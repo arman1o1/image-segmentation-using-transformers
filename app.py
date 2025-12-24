@@ -248,8 +248,8 @@ def export_png(img: Image.Image, mask: np.ndarray):
 
 def create_demo():
     with gr.Blocks(theme=gr.themes.Soft(), title="Magic Studio") as demo:
-        gr.Markdown("# 🪄 Magic Segmentation Studio")
-        gr.Markdown("Transform your photos using AI segmentation. Upload, Click to select objects, and Style!")
+        gr.Markdown("# 🖼️Image Segmentation Studio")
+        gr.Markdown("Transform your photos using Image segmentation. Upload, Click to select objects, and Style!")
         
         # Application State
         seg_results = gr.State()
