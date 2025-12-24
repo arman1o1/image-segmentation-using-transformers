@@ -4,7 +4,7 @@ image-segmentation-using-transformers is an image editing app built with **Gradi
 It lets you **click on objects in an image, isolate them using semantic segmentation, and apply professional background filters** — all in your browser.
 
 ---
-[Demo](demo.png)
+![Demo](demo.png)
 
 ## ✨ Features
 
