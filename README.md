@@ -34,7 +34,7 @@ Built with **Gradio** and **Hugging Face Transformers**, designed for experiment
 ## 🛠️ Tech Stack
 
 * **UI:** Gradio (Blocks)
-* **Model:** `facebook/mask2former-swin-tiny-coco-panoptic`
+* **Model:** [`facebook/mask2former-swin-tiny-coco-panoptic`](https://huggingface.co/facebook/mask2former-swin-tiny-coco-panoptic)
 * **Task:** Panoptic Image Segmentation
 * **Framework:** PyTorch + Transformers
 * **Image Processing:** OpenCV, Pillow, NumPy
@@ -43,7 +43,7 @@ Built with **Gradio** and **Hugging Face Transformers**, designed for experiment
 
 ## 🧠 Model Details
 
-* **Model ID:** `facebook/mask2former-swin-tiny-coco-panoptic`
+* **Model ID:** [`facebook/mask2former-swin-tiny-coco-panoptic`](https://huggingface.co/facebook/mask2former-swin-tiny-coco-panoptic)
 * **Inference:** Hugging Face `pipeline`
 * **Hardware Acceleration:**
   * CUDA (NVIDIA GPUs)
