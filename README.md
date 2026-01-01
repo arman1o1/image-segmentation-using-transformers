@@ -1,60 +1,53 @@
-# image-segmentation-using-transformers
+# 🖼️ Image Segmentation Using Transformers
 
-image-segmentation-using-transformers is an image editing app built with **Gradio** and **Hugging Face Transformers**.  
-It lets you **click on objects in an image, isolate them using semantic segmentation, and apply professional background filters** — all in your browser.
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Hugging Face](https://img.shields.io/badge/Hugging%20Face-Transformers-yellow?style=for-the-badge&logo=huggingface&logoColor=black)
+![Gradio](https://img.shields.io/badge/Gradio-UI-orange?style=for-the-badge&logo=gradio&logoColor=white)
+
+An interactive **image editing and segmentation application** that lets you click on objects in an image, isolate them using semantic segmentation, and apply professional background filters — all directly in your browser.
+
+Built with **Gradio** and **Hugging Face Transformers**, designed for experimentation and creative workflows.
 
 ---
-![Demo](demo.png)
+
+## 🖼️ App Demo Screenshot
+
+![Demo Interface](demo.png)
+
+---
 
 ## ✨ Features
 
-- 🧠 **Object Segmentation**
-  - Powered by `facebook/mask2former-swin-tiny-coco-panoptic`
-  - Automatically detects and segments multiple objects in an image
-
-- 🖱️ **Click-to-Select Objects**
-  - Click directly on the image to toggle object categories
-  - Multi-object selection supported
-
-- 🎨 **Filters**
-  - Grayscale
-  - Portrait Blur
-  - Deep Darken
-  - Adjustable exposure, contrast, saturation, and edge smoothing
-
-- 🔄 **Invert Selection**
-  - Apply effects to the background instead of the subject
-
-- 🗺️ **Segmentation Map View**
-  - Visual overlay of all detected objects
-
-- 📦 **Transparent PNG Export**
-  - Export isolated subjects with alpha transparency
+* **Object Segmentation:** Automatically detects and segments multiple objects in an image.
+* **Click-to-Select:** Click directly on the image to toggle object categories (multi-select supported).
+* **Background Filters:**
+  * Grayscale
+  * Portrait Blur
+  * Deep Darken
+  * Exposure, contrast, saturation, and edge smoothing controls
+* **Invert Selection:** Apply effects to the background instead of the subject.
+* **Segmentation Map View:** Visual overlay of all detected object regions.
+* **Transparent PNG Export:** Export isolated subjects with alpha transparency.
 
 ---
 
-## 🚀 Demo UI
+## 🛠️ Tech Stack
 
-The app is built with **Gradio Blocks** and runs locally in your browser.
-
-**Workspace Tabs**
-- 🎨 Workspace – interactive object selection
-- 🗺️ AI Map – category visualization overlay
-
-**Output**
-- Live-rendered result image
-- Downloadable transparent PNG
+* **UI:** Gradio (Blocks)
+* **Model:** `facebook/mask2former-swin-tiny-coco-panoptic`
+* **Task:** Panoptic Image Segmentation
+* **Framework:** PyTorch + Transformers
+* **Image Processing:** OpenCV, Pillow, NumPy
 
 ---
 
-## 🧠 Model
+## 🧠 Model Details
 
-- **Model ID:** `facebook/mask2former-swin-tiny-coco-panoptic`
-- **Task:** Image Segmentation (Panoptic)
-- **Backend:** Hugging Face `pipeline`
-- **Hardware Acceleration:**  
-  - CUDA (NVIDIA GPUs)
-  - CPU fallback (automatic)
+* **Model ID:** `facebook/mask2former-swin-tiny-coco-panoptic`
+* **Inference:** Hugging Face `pipeline`
+* **Hardware Acceleration:**
+  * CUDA (NVIDIA GPUs)
+  * Automatic CPU fallback
 
 ---
 
@@ -80,7 +73,7 @@ venv\Scripts\activate     # Windows
 pip install -r requirements.txt
 ```
 
-**Required packages include:**
+**Core dependencies include:**
 
 * gradio
 * torch
@@ -91,16 +84,18 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Running the App
+## ▶️ Usage
+
+Run the application locally:
 
 ```bash
 python app.py
 ```
 
-Then open your browser at:
+Once started, open your browser at:
 
-```
-http://localhost:7860
+```text
+http://127.0.0.1:7860
 ```
 
 ---
@@ -109,30 +104,29 @@ http://localhost:7860
 
 * Place an example image at:
 
-  ```
+  ```text
   assets/example.jpg
   ```
-* If not found, the app automatically falls back to an online demo image.
+* If no local image is found, the app automatically falls back to an online demo image.
 
 ---
 
 ## 🧩 How It Works
 
-1. **Upload Image**
+1. **Image Upload**
 
    * Image is passed to the segmentation pipeline
 
 2. **Segmentation**
 
-   * Each detected object returns:
+   * Each detected object produces:
 
-     * label
-     * binary mask
+     * Category label
+     * Binary mask
 
 3. **User Interaction**
 
-   * Click image → toggle labels
-   * Select labels via dropdown
+   * Click image regions or select labels via dropdown
 
 4. **Mask Processing**
 
@@ -140,41 +134,26 @@ http://localhost:7860
 
 5. **Rendering**
 
-   * Filters applied only to background or subject
-   * Final image blended using alpha masks
+   * Filters applied selectively to subject or background
 
 6. **Export**
 
-   * Subject extracted as transparent PNG
-
----
-
-## 🛠️ Project Structure
-
-```
-.
-├── app.py                # Main application
-├── assets/
-│   └── example.jpg       # Optional example image
-├── requirements.txt
-└── README.md
-```
+   * Final subject can be downloaded as a transparent PNG
 
 ---
 
 ## ⚠️ Notes & Limitations
 
-* First run will download the model (~hundreds of MB)
-* Performance depends on GPU availability
-* Apple Silicon uses CPU unless supported by the pipeline
-* Designed for experimentation and creative workflows
+* First run downloads large model weights (hundreds of MB)
+* Performance depends heavily on GPU availability
+* Apple Silicon may fall back to CPU execution
+* Intended for experimentation rather than production-scale workloads
 
 ---
 
-## 📜 License
+## 📄 License
 
 This project is released under the **MIT License**.
-You are free to use, modify, and distribute it.
 
 ---
 
@@ -183,5 +162,3 @@ You are free to use, modify, and distribute it.
 * Hugging Face Transformers
 * Facebook AI Research (Mask2Former)
 * Gradio Team
-
----
