@@ -55,8 +55,8 @@ Built with **Gradio** and **Hugging Face Transformers**, designed for experiment
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/magic-segmentation-studio.git
-cd magic-segmentation-studio
+git clone https://github.com/arman1o1/image-segmentation-using-transformers.git
+cd image-segmentation-using-transformers
 ````
 
 ### 2. Create a Virtual Environment (Recommended)
